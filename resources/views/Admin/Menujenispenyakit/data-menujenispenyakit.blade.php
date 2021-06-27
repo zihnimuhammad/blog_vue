@@ -29,7 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/beranda">Home</a></li>
-              <li class="breadcrumb-item active">Menu Jenis Penyakit</li>
+              <li class="breadcrumb-item active">Bobot Penyakit</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="card card-info card-outline">
         <div class="card-header">
-          <h1 class="m-0">Data Latih</h1>
+          <h1 class="m-0">Bobot Penyakit</h1>
           <div class="card-tools">
             <a href="{{route('create-menujenispenyakit')}}" class="btn btn-primary">Tambah Data <i class="fas fa-plus-square"></i></a>
           </div>

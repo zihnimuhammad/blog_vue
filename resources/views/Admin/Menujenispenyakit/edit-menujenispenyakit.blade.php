@@ -24,13 +24,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Edit Menu Jenis Penyakit</h1>
+            <h1 class="m-0">Edit Bobot Penyakit</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/beranda">Home</a></li>
-              <li class="breadcrumb-item"><a href="/data-datalatih">Menu Jenis Penyakit</a></li>
-              <li class="breadcrumb-item active">Edit Menu Jenis Penyakit</li>
+              <li class="breadcrumb-item"><a href="/data-datalatih">Menu Bobot Penyakit</a></li>
+              <li class="breadcrumb-item active">Edit Bobot Penyakit</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -43,7 +43,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="{{url('update-menujenispenyakit',$dat->id)}}" method="post">
+          <form action="{{url('update-menujenispenyakit',$men->id)}}" method="post">
             {{ csrf_field() }}
               <div class="form-group">
                 <input type="text" id="idJenisPenyakit" name="idJenisPenyakit" class="form-control" placeholder="ID Jenis Penyakit" value="{{$men->idMenu}}">

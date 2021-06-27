@@ -24,13 +24,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Tambah Menu Jenis Penyakit</h1>
+            <h1 class="m-0">Tambah Bobot Penyakit</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/beranda">Home</a></li>
-              <li class="breadcrumb-item"><a href="/data-menujenispenyakit">Menu Jenis Penyakit</a></li>
-              <li class="breadcrumb-item active">Tambah Menu Jenis Penyakit</li>
+              <li class="breadcrumb-item"><a href="/data-menujenispenyakit">Bobot Penyakit</a></li>
+              <li class="breadcrumb-item active">Tambah Bobot Penyakit</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
