@@ -8,7 +8,7 @@ class JenispenyakitmenuController extends Controller
 {
     public function index()
     {
-        $menujenispenyakit = Menujenispenyakit::with('menus','suasana','jenis')->paginate(5);
+        $menujenispenyakit = Menujenispenyakit::with('menus','suasana','jenis')->paginate(10);
         return view('Admin.Menujenispenyakit.data-menujenispenyakit', compact('menujenispenyakit'));
     }
 

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Analisa Kesehatan</title>
+    <title>Cafegue</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -38,7 +38,8 @@
 	<body data-spy="scroll" style="height: 100vh;" data-target="#site-navbar" data-offset="200">
 		<nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-light site-navbar-light" id="site-navbar">
 			<div class="container">
-				<a class="navbar-brand" href="/front">Menu Kesehatan</a>
+				<a class="navbar-brand" href="/front"><img src="{{asset('Gambar/logo.png')}}" alt="AdminLTE Logo" class="brand-image" height="1%" width="25%" alt="" srcset="" style="opacity: 1">
+				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
 				  <span class="oi oi-menu"></span> Menu
 				</button>
