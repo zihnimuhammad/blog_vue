@@ -37,7 +37,7 @@ class HidanganmenuController extends Controller
         ];
         $request->gambarMenu->move(public_path().'/images', $dtawal);
         $ubah->update($hid);
-        return redirect('data-menuhidangan')->with('toast_success', 'Data Berhasil Diupdate');
+        return redirect('data-menuhidangan')->with('success', 'Data Berhasil Diupdate');
     }    
     
     public function destroy($id)
@@ -51,7 +51,7 @@ class HidanganmenuController extends Controller
         }
         //Hapus data di database
         $hapus->delete();
-        return back()->with('toast_info', 'Data Berhasil Dihapus');
+        return back()->with('info', 'Data Berhasil Dihapus');
     }
 
     public function store(Request $request)
@@ -69,6 +69,6 @@ class HidanganmenuController extends Controller
             $nm->move(public_path().'/images', $namaFile);
             $menuhidangan->save();
 
-            return redirect('data-menuhidangan')->with('toast_success', 'Data Berhasil Tersimpan');
+            return redirect('data-menuhidangan')->with('success', 'Data Berhasil Tersimpan');
     }
 }

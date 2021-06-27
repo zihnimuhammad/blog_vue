@@ -30,7 +30,7 @@ class KaryawanController extends Controller
             'password' => $request->password,
             'alamat' => $request->alamat,
         ]);
-        return redirect('data-karyawan')->with('toast_success', 'Data Berhasil Tersimpan');
+        return redirect('data-karyawan')->with('success', 'Data Berhasil Tersimpan');
     }
 
     public function edit($id)
@@ -43,13 +43,13 @@ class KaryawanController extends Controller
     {
         $kar = Karyawan::findorfail($id);
         $kar->update($request->all());
-        return redirect('data-karyawan')->with('toast_success', 'Data Berhasil Diupdate');
+        return redirect('data-karyawan')->with('success', 'Data Berhasil Diupdate');
     }    
 
     public function destroy($id)
     {
         $kar = Karyawan::findorfail($id);
         $kar->delete();
-        return back()->with('toast_info', 'Data Berhasil Dihapus');;
+        return back()->with('info', 'Data Berhasil Dihapus');;
     }
 }

@@ -101,5 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 <?php echo $__env->make('Admin.Template.script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
+<?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
 </body>
 </html><?php /**PATH D:\PROJECT\github\blog_vue\resources\views/Admin/Menuhidangan/data-menuhidangan.blade.php ENDPATH**/ ?>

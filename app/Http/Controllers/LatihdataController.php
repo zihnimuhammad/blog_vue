@@ -26,7 +26,7 @@ class LatihdataController extends Controller
             'idMenu' => $request->idMenu,
             'nilaiBobotLatig' => $request->nilaiBobotLatig,
         ]);
-        return redirect('data-datalatih')->with('toast_success', 'Data Berhasil Tersimpan');
+        return redirect('data-datalatih')->with('success', 'Data Berhasil Tersimpan');
     }
 
     public function edit($id)
@@ -39,13 +39,13 @@ class LatihdataController extends Controller
     {
         $dat = Datalatih::findorfail($id);
         $dat->update($request->all());
-        return redirect('data-datalatih')->with('toast_success', 'Data Berhasil Diupdate');
+        return redirect('data-datalatih')->with('success', 'Data Berhasil Diupdate');
     }    
 
     public function destroy($id)
     {
         $dat = Datalatih::findorfail($id);
         $dat->delete();
-        return back()->with('toast_info', 'Data Berhasil Dihapus');;
+        return back()->with('info', 'Data Berhasil Dihapus');;
     }
 }

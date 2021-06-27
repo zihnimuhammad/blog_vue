@@ -23,7 +23,7 @@ class HatisuasanaController extends Controller
         Suasanahati::create([
             'namaSuasanaHati' => $request->namaSuasanaHati,
         ]);
-        return redirect('data-suasanahati')->with('toast_success', 'Data Berhasil Tersimpan');
+        return redirect('data-suasanahati')->with('success', 'Data Berhasil Tersimpan');
     }
 
     public function edit($id)
@@ -36,13 +36,13 @@ class HatisuasanaController extends Controller
     {
         $sua = Suasanahati::findorfail($id);
         $sua->update($request->all());
-        return redirect('data-suasanahati')->with('toast_success', 'Data Berhasil Diupdate');
+        return redirect('data-suasanahati')->with('success', 'Data Berhasil Diupdate');
     }    
 
     public function destroy($id)
     {
         $sua = Suasanahati::findorfail($id);
         $sua->delete();
-        return back()->with('toast_info', 'Data Berhasil Dihapus');;
+        return back()->with('info', 'Data Berhasil Dihapus');;
     }
 }

@@ -23,7 +23,7 @@ class PenyakitjenisController extends Controller
         Jenispenyakit::create([
             'namaJenisPenyakit' => $request->namaJenisPenyakit,
         ]);
-        return redirect('data-penyakitjenis')->with('toast_success', 'Data Berhasil Tersimpan');
+        return redirect('data-penyakitjenis')->with('success', 'Data Berhasil Tersimpan');
     }
 
     public function edit($id)
@@ -36,14 +36,14 @@ class PenyakitjenisController extends Controller
     {
         $pen = Jenispenyakit::findorfail($id);
         $pen->update($request->all());
-        return redirect('data-penyakitjenis')->with('toast_success', 'Data Berhasil Diupdate');
+        return redirect('data-penyakitjenis')->with('success', 'Data Berhasil Diupdate');
     }    
 
     public function destroy($id)
     {
         $pen = Jenispenyakit::findorfail($id);
         $pen->delete();
-        return back()->with('toast_info', 'Data Berhasil Dihapus');;
+        return back()->with('info', 'Data Berhasil Dihapus');;
     }
 }
 

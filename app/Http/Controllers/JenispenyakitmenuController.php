@@ -26,7 +26,7 @@ class JenispenyakitmenuController extends Controller
             'idMenu' => $request->idMenu,
             'bobot' => $request->bobot,
         ]);
-        return redirect('data-menujenispenyakit')->with('toast_success', 'Data Berhasil Tersimpan');
+        return redirect('data-menujenispenyakit')->with('success', 'Data Berhasil Tersimpan');
     }
 
     public function edit($id)
@@ -39,13 +39,13 @@ class JenispenyakitmenuController extends Controller
     {
         $men = Menujenispenyakit::findorfail($id);
         $men->update($request->all());
-        return redirect('data-menujenispenyakit')->with('toast_success', 'Data Berhasil Diupdate');
+        return redirect('data-menujenispenyakit')->with('success', 'Data Berhasil Diupdate');
     }    
 
     public function destroy($id)
     {
         $men = Menujenispenyakit::findorfail($id);
         $men->delete();
-        return back()->with('toast_info', 'Data Berhasil Dihapus');;
+        return back()->with('info', 'Data Berhasil Dihapus');;
     }
 }

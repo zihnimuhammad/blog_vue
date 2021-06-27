@@ -31,7 +31,7 @@ class PemesananController extends Controller
             'mejano' => $request->mejano,
 
         ]);
-        return redirect('data-pesanan')->with('toast_success', 'Data Berhasil Tersimpan');
+        return redirect('data-pesanan')->with('success', 'Data Berhasil Tersimpan');
     }
 
     public function edit($id)
@@ -44,13 +44,13 @@ class PemesananController extends Controller
     {
         $pes = Pesanan::findorfail($id);
         $pes->update($request->all());
-        return redirect('data-pesanan')->with('toast_success', 'Data Berhasil Diupdate');
+        return redirect('data-pesanan')->with('success', 'Data Berhasil Diupdate');
     }    
 
     public function destroy($id)
     {
         $pes = Pesanan::findorfail($id);
         $pes->delete();
-        return back()->with('toast_info', 'Data Berhasil Dihapus');;
+        return back()->with('info', 'Data Berhasil Dihapus');;
     }
 }

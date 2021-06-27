@@ -31,7 +31,7 @@ class HistorypemesananController extends Controller
             'mejano' => $request->mejano,
 
         ]);
-        return redirect('data-historypesanan')->with('toast_success', 'Data Berhasil Tersimpan');
+        return redirect('data-historypesanan')->with('success', 'Data Berhasil Tersimpan');
     }
 
     public function edit($id)
@@ -44,13 +44,13 @@ class HistorypemesananController extends Controller
     {
         $his = Pesanan::findorfail($id);
         $his->update($request->all());
-        return redirect('data-historypesanan')->with('toast_success', 'Data Berhasil Diupdate');
+        return redirect('data-historypesanan')->with('success', 'Data Berhasil Diupdate');
     }    
 
     public function destroy($id)
     {
         $his = Pesanan::findorfail($id);
         $his->delete();
-        return back()->with('toast_info', 'Data Berhasil Dihapus');;
+        return back()->with('info', 'Data Berhasil Dihapus');;
     }
 }
