@@ -51,7 +51,16 @@ class PemesananController extends Controller
     public function update(Request $request, $id)
     {
         $pes = Pesanan::findorfail($id);
-        $pes->update($request->all());
+        $pesUpdate = [
+            'idMenu' => $request['idMenu'],
+            'idPengguna' => $request['idPengguna'],
+            'mejano' => $request['mejano'],
+            'jumlahPesan' => $request['jumlahPesan'],
+            'harga' => $request['harga'],
+            'totalharga' => $request['totalharga'],
+            'tanggalPesan' => $pes->tanggalPesan,
+        ];
+        $pes->update($pesUpdate);
         return redirect('data-pesanan')->with('success', 'Data Berhasil Diupdate');
     }    
 
