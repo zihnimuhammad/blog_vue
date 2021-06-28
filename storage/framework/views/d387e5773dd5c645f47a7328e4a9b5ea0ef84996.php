@@ -24,12 +24,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-         
+            
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/beranda">Home</a></li>
-              <li class="breadcrumb-item active">Data Karyawan</li>
+              <li class="breadcrumb-item active">Pesanan</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -41,55 +41,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="card card-info card-outline">
         <div class="card-header">
-          <h1 class="m-0">Data Karyawan</h1>
+          <h1 class="m-0">Pesanan</h1>
           <div class="card-tools">
-            <a href="<?php echo e(route('create-karyawan')); ?>" class="btn btn-primary">Tambah Data <i class="fas fa-plus-square"></i></a>
+            <a href="<?php echo e(route('create-pesanan')); ?>" class="btn btn-primary">Tambah Data <i class="fas fa-plus-square"></i></a>
           </div>
         </div>
         <div class="card-body">
           <table class="table table-bordered">
             <tr>
               <th>No</th>
-              <th>Nama</th>
-              <th>Jabatan</th>
-              <th>Jenis Kelamin</th>
-              <th>Tanggal Lahir</th>
-              <th>No HP</th>
-              <th>Email</th>
-              <th>Alamat</th>
+              <th>ID</th>
+              <th>No Order</th>
+              <th>No Meja</th>
+              <th>Menu</th>
+              <th>Nama Pengguna</th>
+              <th>Tanggal Pesan</th>
+              <th>Jumlah</th>
+              <th>Harga</th>
+              <th>Total</th>
               <th>Aksi</th>
             </tr>
-            <?php $__currentLoopData = $datakaryawan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php $__currentLoopData = $pesanan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>
-              <td><?php echo e($datakaryawan->firstItem() + $key); ?></td>
-              <td><?php echo e($item->nama); ?></td>
-              <td><?php echo e($item->jabatan); ?></td>
-              <td><?php echo e($item->jenis_kelamin); ?></td>
-              <td><?php echo e($item->tanggal_lahir); ?></td>
-              <td><?php echo e($item->no_hp); ?></td>
-              <td><?php echo e($item->email); ?></td>
-              <td><?php echo e($item->alamat); ?></td>
+              <td><?php echo e($pesanan->firstItem() + $key); ?></td>
+              <td><?php echo e($item->id); ?></td>
+              <td><?php echo e($item->orderno); ?></td>
+              <td><?php echo e($item->mejano); ?></td>
+              <td><?php echo e($item->menus->namaMenu); ?></td>
+              <td><?php echo e($item->users->username); ?></td>
+              <td><?php echo e($item->tanggalPesan); ?></td>
+              <td><?php echo e($item->jumlahPesan); ?></td>
+              <td><?php echo e($item->harga); ?></td>
+              <td><?php echo e($item->totalharga); ?></td>
               <td>
-                <a href="<?php echo e(url('edit-karyawan',$item->id)); ?>"><i class="fas fa-edit"></i></a>
-                <a href="<?php echo e(url('delete-karyawan',$item->id)); ?>"><i class="far fa-trash-alt" style="color : red"></i></a>
+                <a href="<?php echo e(url('edit-pesanan',$item->id)); ?>"><i class="fas fa-edit"></i></a>
+                <a href="<?php echo e(url('delete-pesanan',$item->id)); ?>"><i class="far fa-trash-alt" style="color : red"></i></a>
               </td>
             </tr>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           </table>
           <div class="pull-left">
           Showing
-          <?php echo e($datakaryawan->firstItem()); ?>
+          <?php echo e($pesanan->firstItem()); ?>
 
           to
-          <?php echo e($datakaryawan->lastItem()); ?>
+          <?php echo e($pesanan->lastItem()); ?>
 
           of
-          <?php echo e($datakaryawan->total()); ?>
+          <?php echo e($pesanan->total()); ?>
 
           entries
           </div>
           <div class="pull-right">
-            <?php echo e($datakaryawan->links()); ?>
+            <?php echo e($pesanan->links()); ?>
 
           </div>
         </div>
@@ -120,4 +124,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
 </body>
-</html><?php /**PATH D:\PROJECT\github\blog_vue\resources\views/Admin/Karyawan/data-karyawan.blade.php ENDPATH**/ ?>
+</html><?php /**PATH D:\PROJECT\github\blog_vue\resources\views/Admin/Pesanan/data-pesanan.blade.php ENDPATH**/ ?>

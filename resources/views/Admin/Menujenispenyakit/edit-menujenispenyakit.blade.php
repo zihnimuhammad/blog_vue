@@ -46,15 +46,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <form action="{{url('update-menujenispenyakit',$men->id)}}" method="post">
             {{ csrf_field() }}
               <div class="form-group">
+                <label for="idJenisPenyakit">ID Jenis Penyakit</label>
                 <input type="text" id="idJenisPenyakit" name="idJenisPenyakit" class="form-control" placeholder="ID Jenis Penyakit" value="{{$men->idMenu}}">
               </div>
               <div class="form-group">
+                <label for="idSuasanaHati">ID Suasana Hati</label>
                 <input type="text" id="idSuasanaHati" name="idSuasanaHati" class="form-control" placeholder="ID Suasana Hati" value="{{$men->idSuasanaHati}}">
               </div>
               <div class="form-group">
+                <label for="idMenu">ID Menu</label>
                 <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" value="{{$men->idMenu}}">
               </div>
               <div class="form-group">
+                <label for="bobot">Nilai Bobot</label>
                 <input type="text" id="bobot" name="bobot" class="form-control" placeholder="Nilai Bobot" value="{{$men->bobot}}">
               </div>
               <div class="form-group">

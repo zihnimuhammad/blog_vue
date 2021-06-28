@@ -56,7 +56,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <th>Tanggal Lahir</th>
               <th>No HP</th>
               <th>Email</th>
-              <th>Password</th>
               <th>Alamat</th>
               <th>Aksi</th>
             </tr>
@@ -69,7 +68,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <td>{{$item->tanggal_lahir}}</td>
               <td>{{$item->no_hp}}</td>
               <td>{{$item->email}}</td>
-              <td>{{$item->password}}</td>
               <td>{{$item->alamat}}</td>
               <td>
                 <a href="{{url('edit-karyawan',$item->id)}}"><i class="fas fa-edit"></i></a>

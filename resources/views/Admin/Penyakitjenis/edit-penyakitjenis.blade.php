@@ -46,6 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <form action="{{url('update-penyakitjenis',$pen->id)}}" method="post">
             {{ csrf_field() }}
               <div class="form-group">
+                <label for="namaJenisPenyakit">Nama Jenis Penyakit</label>
                   <input type="text" id="namaJenisPenyakit" name="namaJenisPenyakit" class="form-control" placeholder="Nama Jenis Penyakit" value="{{$pen->namaJenisPenyakit}}">
               </div>
               <div class="form-group">

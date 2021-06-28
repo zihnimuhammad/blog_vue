@@ -6,17 +6,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-  @include('Admin.Template.head')
+  <?php echo $__env->make('Admin.Template.head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Navbar -->
-@include('Admin.Template.navbar')
+<?php echo $__env->make('Admin.Template.navbar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-@include('Admin.Template.sidebar')
+<?php echo $__env->make('Admin.Template.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -24,13 +24,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Edit Suasana Hati</h1>
+            <h1 class="m-0">Edit Jenis Penyakit</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/beranda">Home</a></li>
-              <li class="breadcrumb-item"><a href="/data-suasanahati">Suasana Hati</a></li>
-              <li class="breadcrumb-item active">Edit Suasana Hati</li>
+              <li class="breadcrumb-item"><a href="/data-penyakitjenis">Jenis Penyakit</a></li>
+              <li class="breadcrumb-item active">Edit Jenis Penyakit</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -43,11 +43,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="{{url('update-suasanahati',$sua->id)}}" method="post">
-            {{ csrf_field() }}
+          <form action="<?php echo e(url('update-penyakitjenis',$pen->id)); ?>" method="post">
+            <?php echo e(csrf_field()); ?>
+
               <div class="form-group">
-                <label for="namaSuasanaHati">Nama Suasana Hati</label>
-                  <input type="text" id="namaSuasanahati" name="namaSuasanahati" class="form-control" placeholder="Nama Suasana Hati" value="{{$sua->namaSuasanaHati}}">
+                  <input type="text" id="namaJenisPenyakit" name="namaJenisPenyakit" class="form-control" placeholder="Nama Jenis Penyakit" value="<?php echo e($pen->namaJenisPenyakit); ?>">
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Ubah Data</button>
@@ -71,11 +71,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  @include('Admin.Template.footer')
+  <?php echo $__env->make('Admin.Template.footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-@include('Admin.Template.script')
+<?php echo $__env->make('Admin.Template.script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
-</html>
+</html><?php /**PATH D:\PROJECT\github\blog_vue\resources\views/Admin/Penyakitjenis/edit-penyakitjenis.blade.php ENDPATH**/ ?>

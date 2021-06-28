@@ -47,6 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <?php echo e(csrf_field()); ?>
 
               <div class="form-group">
+                <label for="gambarMenu">Nama Karyawan</label>
                   <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Karyawan" value="<?php echo e($kar->nama); ?>">
               </div>
               <div class="form-group">
@@ -69,15 +70,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir" value="<?php echo e($kar->tanggal_lahir); ?>">
               </div>
               <div class="form-group">
+                <label for="no_hp">No HP</label>
                 <input type="text" id="no_hp" name="no_hp" class="form-control" placeholder="No HP" value="<?php echo e($kar->no_hp); ?>">
               </div>
               <div class="form-group">
+                <label for="email">Email</label>
                 <input type="text" id="email" name="email" class="form-control" placeholder="Email" value="<?php echo e($kar->email); ?>">
               </div>
               <div class="form-group">
+                <label for="password">Password</label>
                 <input type="text" id="password" name="password" class="form-control" placeholder="Password" value="<?php echo e($kar->password); ?>">
               </div>
               <div class="form-group">
+                <label for="alamat">Alamat</label>
                 <textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat"><?php echo e($kar->alamat); ?></textarea>
               </div>
               <div class="form-group">

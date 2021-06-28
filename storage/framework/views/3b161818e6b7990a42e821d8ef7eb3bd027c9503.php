@@ -47,13 +47,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <?php echo e(csrf_field()); ?>
 
               <div class="form-group">
+                <label for="namaMenu">Nama Menu Hidangan</label>
                   <input type="text" id="namaMenu" name="namaMenu" class="form-control" placeholder="Nama Menu Hidangan" value="<?php echo e($hid->namaMenu); ?>">
               </div>
               <div class="form-group">
+                <label for="keterangan">Keterangan</label>
                 <input type="text" id="keterangan" name="keterangan" class="form-control" placeholder="Keterangan" value="<?php echo e($hid->keterangan); ?>">
             </div>
               <div class="form-group">
+                <label for="harga">Harga</label>
                   <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga Menu Hidangan" value="<?php echo e($hid->harga); ?>">
+              </div>
+              <div>
+                <label for="gambarMenu">Gambar Menu</label>
               </div>
               <div class="form-group">
                   <input type="file" id="gambarMenu" name="gambarMenu">

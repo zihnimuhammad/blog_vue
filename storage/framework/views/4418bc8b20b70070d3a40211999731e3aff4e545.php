@@ -24,13 +24,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Edit Pesanan</h1>
+            <h1 class="m-0">Edit Data Latih</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="/beranda">Home</a></li>
-              <li class="breadcrumb-item"><a href="/data-pesanan">Pesanan</a></li>
-              <li class="breadcrumb-item active">Edit Pesanan</li>
+              <li class="breadcrumb-item"><a href="/data-datalatih">Data Latih</a></li>
+              <li class="breadcrumb-item active">Edit Data Latih</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -43,32 +43,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="<?php echo e(url('update-pesanan',$pes->id)); ?>" method="post">
+          <form action="<?php echo e(url('update-pesanan',$dat->id)); ?>" method="post">
             <?php echo e(csrf_field()); ?>
 
               <div class="form-group">
+                <label for="idJenisPenyakit">ID Jenis Penyakit</label>
+                <input type="text" id="idJenisPenyakit" name="idJenisPenyakit" class="form-control" placeholder="ID Jenis Penyakit" value="<?php echo e($dat->idJenisPenyakit); ?>">
+              </div>
+              <div class="form-group">
+                <label for="idSuasanaHati">ID Suasana Hati</label>
+                <input type="text" id="idSuasanaHati" name="idSuasanaHati" class="form-control" placeholder="ID Suasana Hati" value="<?php echo e($dat->idSuasanaHati); ?>">
+              </div>
+              <div class="form-group">
                 <label for="idMenu">ID Menu</label>
-                  <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" value="<?php echo e($pes->idMenu); ?>">
+                <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" value="<?php echo e($dat->idMenu); ?>">
               </div>
               <div class="form-group">
-                <label for="idPengguna">ID Pengguna</label>
-                <input type="text" id="idPengguna" name="idPengguna" class="form-control" placeholder="ID Pengguna" value="<?php echo e($pes->idPengguna); ?>">
-              </div>
-              <div class="form-group">
-                <label for="mejano">Nomor Meja</label>
-                <input type="text" id="mejano" name="mejano" class="form-control" placeholder="Nomor Meja" value="<?php echo e($pes->mejano); ?>">
-              </div>
-              <div class="form-group">
-                <label for="jumlahpesan">Jumlah Pesanan</label>
-                <input type="text" id="jumlahPesan" name="jumlahPesan" class="form-control" placeholder="Jumlah Pesanan" value="<?php echo e($pes->jumlahPesan); ?>">
-              </div>
-              <div class="form-group">
-                <label for="harga">Harga</label>
-                <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga" value="<?php echo e($pes->harga); ?>">
-              </div>
-              <div class="form-group">
-                <label for="totalharga">Total Harga</label>
-                <input type="text" id="totalharga" name="totalharga" class="form-control" placeholder="Total Harga" value="<?php echo e($pes->totalharga); ?>">
+                <label for="nilaiBobotLatig">Nilai Bobot</label>
+                <input type="text" id="nilaiBobotLatig" name="nilaiBobotLatig" class="form-control" placeholder="Nilai Bobot" value="<?php echo e($dat->nilaiBobotLatig); ?>">
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Ubah Data</button>
@@ -99,4 +91,4 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 <?php echo $__env->make('Admin.Template.script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 </body>
-</html><?php /**PATH D:\PROJECT\github\blog_vue\resources\views/Admin/Pesanan/edit-pesanan.blade.php ENDPATH**/ ?>
+</html><?php /**PATH D:\PROJECT\github\blog_vue\resources\views/Admin/Datalatih/edit-datalatih.blade.php ENDPATH**/ ?>
