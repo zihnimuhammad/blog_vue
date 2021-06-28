@@ -55,6 +55,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <input type="date" id="tanggalPesan" name="tanggalPesan" class="form-control" placeholder="Tanggal Pesanan">
               </div>
               <div class="form-group">
+                <input type="text" id="mejano" name="mejano" class="form-control" placeholder="Nomor Meja">
+              </div>
+              <div class="form-group">
                 <input type="text" id="jumlahPesan" name="jumlahPesan" class="form-control" placeholder="Jumlah Pesanan">
               </div>
               <div class="form-group">

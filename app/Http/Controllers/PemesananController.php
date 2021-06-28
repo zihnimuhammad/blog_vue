@@ -8,7 +8,7 @@ class PemesananController extends Controller
 {
     public function index()
     {
-        $pesanan = Pesanan::with('menus','users')->paginate(5);
+        $pesanan = Pesanan::with('menus','users')->orderBy('created_at', 'desc')->paginate(5);
         return view('Admin.Pesanan.data-pesanan', compact('pesanan'));
     }
 
@@ -19,6 +19,14 @@ class PemesananController extends Controller
 
     public function store(Request $request)
     {
+        $iduser = "";
+        $trx=0;
+        if($request->session()->has('username')){
+			$iduser = $request->session()->get('id_user');
+			$username = $request->session()->get('username');
+			$role = $request->session()->get('role');			
+		}
+        $order_no = 'CFG'.$iduser.chr(rand(65,90)).$trx;
         //dd($request->all());
         Pesanan::create([
             'idMenu' => $request->idMenu,
@@ -27,7 +35,7 @@ class PemesananController extends Controller
             'jumlahPesan' => $request->jumlahPesan,
             'harga' => $request->harga,
             'totalharga' => $request->totalharga,
-            'orderno' => $request->orderno,
+            'orderno' => $order_no,
             'mejano' => $request->mejano,
 
         ]);
