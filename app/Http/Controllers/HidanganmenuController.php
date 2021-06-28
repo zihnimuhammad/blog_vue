@@ -33,9 +33,15 @@ class HidanganmenuController extends Controller
             'keterangan' => $request['keterangan'],
             'harga' => $request['harga'],
             'gambarMenu' => $dtawal,
-
         ];
-        $request->gambarMenu->move(public_path().'/images', $dtawal);
+        
+        $file_photo = $request->file('gambarMenu');
+        if($file_photo) {
+            $filename = $file_photo->getClientOriginalName();
+            $hid['gambarMenu'] = $filename; // Update field photo
+            $proses = $file_photo->move(public_path().'/images', $filename);
+        }
+        
         $ubah->update($hid);
         return redirect('data-menuhidangan')->with('success', 'Data Berhasil Diupdate');
     }    
