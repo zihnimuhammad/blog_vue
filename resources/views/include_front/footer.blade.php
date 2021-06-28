@@ -3,7 +3,7 @@
         <div class="row site-animate">
            <div class="col-md-12 text-center">
             <div class="site-footer-widget mb-4">
-				Menu makanan sehat
+				CAFEGUE
             </div>
           </div>
           <div class="col-md-12 text-center">
