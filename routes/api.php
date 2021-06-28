@@ -24,6 +24,10 @@ Client secret: XhjAoyGt79MyK6LSRzFUG207ef0OcLsOghOgccIz
 //karyawan
 Route::post('register', 'API\KaryawanController@register');
 Route::post('login', 'API\KaryawanController@login');
+Route::get('pesanan', 'API\DataPesananController@getPesanan');
+Route::get('menu-hidangan', 'API\MenuHidanganController@getMenuHidangan');
+Route::get('data-kasir', 'API\DataKasirController@getDataKasir');
+Route::get('history-pesanan', 'API\HistoryPesananController@getHistoryPesanan');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
