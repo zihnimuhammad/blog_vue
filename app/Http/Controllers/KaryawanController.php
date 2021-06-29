@@ -27,7 +27,7 @@ class KaryawanController extends Controller
             'tanggal_lahir' => $request->tanggal_lahir,
             'no_hp' => $request->no_hp,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => bcrypt($request->password),
             'alamat' => $request->alamat,
         ]);
         return redirect('data-karyawan')->with('success', 'Data Berhasil Tersimpan');
