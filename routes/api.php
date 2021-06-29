@@ -22,13 +22,14 @@ Client secret: XhjAoyGt79MyK6LSRzFUG207ef0OcLsOghOgccIz
 */
 
 //karyawan
-Route::post('register', 'API\LoginController@register');
-Route::post('login', 'API\LoginController@login');
-Route::get('karyawan', 'API\KaryawanController@getKaryawan');
-Route::get('pesanan', 'API\DataPesananController@getPesanan');
-Route::get('menu-hidangan', 'API\MenuHidanganController@getMenuHidangan');
-Route::get('data-kasir', 'API\DataKasirController@getDataKasir');
-Route::get('history-pesanan', 'API\HistoryPesananController@getHistoryPesanan');
+Route::post('register', 'Api\LoginController@register');
+Route::post('login', 'Api\LoginController@login');
+Route::get('karyawan', 'Api\KaryawanController@getKaryawan');
+Route::get('pesanan', 'Api\DataPesananController@getPesanan');
+Route::get('menu-hidangan', 'Api\MenuHidanganController@getMenuHidangan');
+Route::get('data-kasir', 'Api\DataKasirController@getDataKasir');
+Route::get('history-pesanan', 'Api\HistoryPesananController@getHistoryPesanan');
+Route::put('update-pesanan', 'Api\CommonController@updateStatusPesanan');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
