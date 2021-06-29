@@ -43,10 +43,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="{{route('simpan-penyakitjenis')}}" method="post">
+          <form class="was-validated" action="{{route('simpan-penyakitjenis')}}" method="post">
             {{ csrf_field() }}
               <div class="form-group">
-                  <input type="text" id="namaJenisPenyakit" name="namaJenisPenyakit" class="form-control" placeholder="Nama Jenis Penyakit">
+                  <input type="text" id="namaJenisPenyakit" name="namaJenisPenyakit" class="form-control" placeholder="Nama Jenis Penyakit" required>
+                  <div class="invalid-feedback">
+                    Nama Jenis Penyakit Harus Diisi.
+                  </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Simpan Data</button>

@@ -86,7 +86,7 @@
 													
 													<label class="block clearfix">
                                                         <span class="block input-icon input-icon-right">
-                                                            <input type="text" class="form-control" placeholder="phone" name="phone" required />
+                                                            <input id="numbersOnly" pattern="[0-9.]+" type="text" class="form-control" placeholder="phone Harus Berformat Angka" name="phone" required />
                                                             <i class="ace-icon fa fa-lock"></i>
                                                         </span>
                                                     </label>

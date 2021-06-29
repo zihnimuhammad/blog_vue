@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\pesanan;
 class PemesananController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $pesanan = Pesanan::with('menus','users')->orderBy('created_at', 'desc')->paginate(5);
         return view('Admin.Pesanan.data-pesanan', compact('pesanan'));
@@ -21,6 +21,11 @@ class PemesananController extends Controller
     {
         $iduser = "";
         $trx=0;
+        // $jumlah = $request -> get('jumlahPesan');
+        // $harga  = $request -> get('totalharga');
+        // //perkalian variabel a dengan variabel b
+        // $total = $jumlah * $harga;
+
         if($request->session()->has('username')){
 			$iduser = $request->session()->get('id_user');
 			$username = $request->session()->get('username');
@@ -34,7 +39,7 @@ class PemesananController extends Controller
             'tanggalPesan' => $request->tanggalPesan,
             'jumlahPesan' => $request->jumlahPesan,
             'harga' => $request->harga,
-            'totalharga' => $request->totalharga,
+            'totalharga' => $totalharga,
             'orderno' => $order_no,
             'mejano' => $request->mejano,
 

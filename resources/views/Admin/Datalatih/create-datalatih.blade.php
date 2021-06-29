@@ -43,19 +43,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="{{route('simpan-pesanan')}}" method="post">
+          <form class="was-validated" action="{{route('simpan-pesanan')}}" method="post">
             {{ csrf_field() }}
               <div class="form-group">
-                <input type="text" id="idJenisPenyakit" name="idJenisPenyakit" class="form-control" placeholder="ID Jenis Penyakit">
+                <input type="text" id="idJenisPenyakit" name="idJenisPenyakit" class="form-control" placeholder="ID Jenis Penyakit" required>
+                <div class="invalid-feedback">
+                  Jenis Penyakit Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                <input type="text" id="idSuasanaHati" name="idSuasanaHati" class="form-control" placeholder="ID Suasana Hati">
+                <input type="text" id="idSuasanaHati" name="idSuasanaHati" class="form-control" placeholder="ID Suasana Hati" required>
+                <div class="invalid-feedback">
+                  Suasana Hati Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu">
+                <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" required>
+                <div class="invalid-feedback">
+                  ID Menu Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                <input type="text" id="nilaiBobotLatig" name="nilaiBobotLatig" class="form-control" placeholder="Nilai Bobot">
+                <input type="text" id="nilaiBobotLatig" name="nilaiBobotLatig" class="form-control" placeholder="Nilai Bobot" required>
+                <div class="invalid-feedback">
+                  Nilai Bobot Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Simpan Data</button>

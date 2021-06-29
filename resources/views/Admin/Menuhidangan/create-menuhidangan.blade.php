@@ -43,19 +43,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="{{route('simpan-menuhidangan')}}" method="post" enctype="multipart/form-data">
+          <form class="was-validated" action="{{route('simpan-menuhidangan')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
               <div class="form-group">
-                  <input type="text" id="namaMenu" name="namaMenu" class="form-control" placeholder="Nama Menu Hidangan">
+                  <input type="text" id="namaMenu" name="namaMenu" class="form-control" placeholder="Nama Menu Hidangan" required>
+                  <div class="invalid-feedback">
+                    Nama Menu Harus Diisi.
+                  </div>
               </div>
               <div class="form-group">
-                <input type="text" id="keterangan" name="keterangan" class="form-control" placeholder="Keterangan">
+                <input type="text" id="keterangan" name="keterangan" class="form-control" placeholder="Keterangan" required>
+                <div class="invalid-feedback">
+                  Keterangan Harus Diisi.
+                </div>
             </div>
               <div class="form-group">
-                  <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga Menu Hidangan">
+                  <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga Menu Hidangan" required>
+                  <div class="invalid-feedback">
+                    Harga Harus Diisi.
+                  </div>
               </div>
               <div class="form-group">
-                  <input type="file" id="gambarMenu" name="gambarMenu">
+                  <input type="file" id="gambarMenu" name="gambarMenu" required>
+                  <div class="invalid-feedback">
+                    Gambar Menu Harus Diisi.
+                  </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Simpan Data</button>

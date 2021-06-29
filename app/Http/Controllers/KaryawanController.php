@@ -31,6 +31,17 @@ class KaryawanController extends Controller
             'alamat' => $request->alamat,
         ]);
         return redirect('data-karyawan')->with('success', 'Data Berhasil Tersimpan');
+        // $this->validate($request,[
+        //     'nama' => 'required',
+        //     'jabatan' => 'required',
+        //     'jenis_kelamin' => 'required',
+        //     'tanggal_lahir' => 'required',
+        //     'no_hp' => 'required',
+        //     'email' => 'required',
+        //     'password' => 'required',
+        //     'alamat' => 'required',
+        //  ]);
+        //  return view('/data-karyawan',['data' => $request]);
     }
 
     public function edit($id)
