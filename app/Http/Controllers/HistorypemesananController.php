@@ -9,12 +9,12 @@ class HistorypemesananController extends Controller
     public function index()
     {
         $historypesanan = Pesanan::with('menus','users')->paginate(5);
-        return view('Admin.HistoryPesanan.data-historypesanan', compact('historypesanan'));
+        return view('Admin.Historypesanan.data-historypesanan', compact('historypesanan'));
     }
 
     public function create()
     {
-        return view('Admin.HistoryPesanan.create-historypesanan');
+        return view('Admin.Historypesanan.create-historypesanan');
     }
 
     public function store(Request $request)
@@ -37,7 +37,7 @@ class HistorypemesananController extends Controller
     public function edit($id)
     {
         $his = Pesanan::findorfail($id);
-        return view('Admin.HistoryPesanan.edit-historypesanan',compact('his'));
+        return view('Admin.Historypesanan.edit-historypesanan',compact('his'));
     }
 
     public function update(Request $request, $id)
