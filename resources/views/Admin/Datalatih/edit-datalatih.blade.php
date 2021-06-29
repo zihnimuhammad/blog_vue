@@ -43,23 +43,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="{{url('update-pesanan',$dat->id)}}" method="post">
+          <form class="was-validated" action="{{url('update-pesanan',$dat->id)}}" method="post">
             {{ csrf_field() }}
               <div class="form-group">
                 <label for="idJenisPenyakit">ID Jenis Penyakit</label>
-                <input type="text" id="idJenisPenyakit" name="idJenisPenyakit" class="form-control" placeholder="ID Jenis Penyakit" value="{{$dat->idJenisPenyakit}}">
+                <input type="text" id="idJenisPenyakit" name="idJenisPenyakit" class="form-control" placeholder="ID Jenis Penyakit" value="{{$dat->idJenisPenyakit}}" required>
+                <div class="invalid-feedback">
+                  ID Jenis Penyakit Harus Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="idSuasanaHati">ID Suasana Hati</label>
-                <input type="text" id="idSuasanaHati" name="idSuasanaHati" class="form-control" placeholder="ID Suasana Hati" value="{{$dat->idSuasanaHati}}">
+                <input type="text" id="idSuasanaHati" name="idSuasanaHati" class="form-control" placeholder="ID Suasana Hati" value="{{$dat->idSuasanaHati}}" required>
+                <div class="invalid-feedback">
+                  ID Suasana Hati Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="idMenu">ID Menu</label>
-                <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" value="{{$dat->idMenu}}">
+                <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" value="{{$dat->idMenu}}" required>
+                <div class="invalid-feedback">
+                  ID Menu Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="nilaiBobotLatig">Nilai Bobot</label>
-                <input type="text" id="nilaiBobotLatig" name="nilaiBobotLatig" class="form-control" placeholder="Nilai Bobot" value="{{$dat->nilaiBobotLatig}}">
+                <input type="text" id="nilaiBobotLatig" name="nilaiBobotLatig" class="form-control" placeholder="Nilai Bobot" value="{{$dat->nilaiBobotLatig}}" required>
+                <div class="invalid-feedback">
+                  Nilai Bobot Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Ubah Data</button>

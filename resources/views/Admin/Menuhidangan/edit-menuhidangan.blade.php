@@ -43,19 +43,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="{{url('update-menuhidangan',$hid->id)}}" method="post" enctype="multipart/form-data">
+          <form class="was-validated" action="{{url('update-menuhidangan',$hid->id)}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
               <div class="form-group">
                 <label for="namaMenu">Nama Menu Hidangan</label>
-                  <input type="text" id="namaMenu" name="namaMenu" class="form-control" placeholder="Nama Menu Hidangan" value="{{$hid->namaMenu}}">
+                  <input type="text" id="namaMenu" name="namaMenu" class="form-control" placeholder="Nama Menu Hidangan" value="{{$hid->namaMenu}}" required>
+                  <div class="invalid-feedback">
+                    Nama Menu Hidangan Harus Diisi.
+                  </div>
               </div>
               <div class="form-group">
                 <label for="keterangan">Keterangan</label>
-                <input type="text" id="keterangan" name="keterangan" class="form-control" placeholder="Keterangan" value="{{$hid->keterangan}}">
+                <input type="text" id="keterangan" name="keterangan" class="form-control" placeholder="Keterangan" value="{{$hid->keterangan}}" required>
+                <div class="invalid-feedback">
+                  Keterangan Harus Diisi.
+                </div>
             </div>
               <div class="form-group">
                 <label for="harga">Harga</label>
-                  <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga Menu Hidangan" value="{{$hid->harga}}">
+                  <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga Menu Hidangan" value="{{$hid->harga}}" required>
+                  <div class="invalid-feedback">
+                    Harga Harus Diisi.
+                  </div>
               </div>
               <div>
                 <label for="gambarMenu">Gambar Menu</label>

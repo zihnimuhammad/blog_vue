@@ -43,7 +43,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="{{url('update-karyawan',$kar->id)}}" method="post">
+          <form class="was-validated" action="{{url('update-karyawan',$kar->id)}}" method="post">
             {{ csrf_field() }}
               <div class="form-group">
                 <label for="gambarMenu">Nama Karyawan</label>
@@ -66,23 +66,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label for="tanggal_lahir">Tanggal Lahir</label>
-                <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir" value="{{$kar->tanggal_lahir}}">
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir" value="{{$kar->tanggal_lahir}}" required>
+                <div class="invalid-feedback">
+                  Tanggal Lahir Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="no_hp">No HP</label>
-                <input type="text" id="no_hp" name="no_hp" class="form-control" placeholder="No HP" value="{{$kar->no_hp}}">
+                <input type="text" id="no_hp" name="no_hp" class="form-control" placeholder="No HP" value="{{$kar->no_hp}}" required>
+                <div class="invalid-feedback">
+                  Nomor HP Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="text" id="email" name="email" class="form-control" placeholder="Email" value="{{$kar->email}}">
+                <input type="text" id="email" name="email" class="form-control" placeholder="Email" value="{{$kar->email}}" required>
+                <div class="invalid-feedback">
+                  Email Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" id="password" name="password" class="form-control" placeholder="Password" value="{{$kar->password}}">
+                <input type="text" id="password" name="password" class="form-control" placeholder="Password" value="{{$kar->password}}" required>
+                <div class="invalid-feedback">
+                  Password Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="alamat">Alamat</label>
-                <textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat">{{$kar->alamat}}</textarea>
+                <textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat" required>{{$kar->alamat}}</textarea>
+                <div class="invalid-feedback">
+                  Alamat Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Ubah Data</button>
