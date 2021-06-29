@@ -4,67 +4,23 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Karyawan;
-use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\DB;
 class KaryawanController extends Controller
 {
-    public function login(Request $requset){
+    public function getKaryawan(){
 
-        
-        $karyawan = Karyawan::where('email', $requset->email)->first();
+        $Karyawan = \App\Karyawan::all();
 
-        if($karyawan){
-            if(password_verify($requset->password, $karyawan->password)){
-                return response()->json([
-                    'success' => 1,
-                    'message' => 'Selamat Datang ' .$karyawan->nama,
-                    'user' => $karyawan
-                ]);
-            }
-            return $this->error('Password Salah');
-        }
-        return $this->error('Username Tidak Terdaftar');
-    }
-
-    public function register(Request $requset){
-        
-        $validasi = Validator::make($requset->all(), [
-			'email'=>'required|unique:users',
-			'password'=>'required',
-            'nama'=>'required',
-            'jabatan'=>'required',
-            'jenis_kelamin'=>'required',
-            'tanggal_lahir'=>'date',
-            'no_hp'=>'required',
-            'alamat'=>'required',
-        ]);
-
-        if($validasi->fails()){
-            $val = $validasi->errors()->all();
-            return $this->error($val[0]);
-        }
-
-        $karyawan = Karyawan::create(array_merge($requset->all(), [
-            'password' => bcrypt($requset->password)
-        ]));
-
-        if($karyawan){
+        if($Karyawan){
             return response()->json([
                 'success' => 1,
-                'message' => 'Selamat Register Berhasil ', 
-                'user' => $karyawan
+                'message' => 'success',
+                'data' => $Karyawan
             ]);
         }
-        return $this->error('Registrasi Gagal');
-        
-    }
-
-
-    public function error($pasan){
         return response()->json([
             'success' => 0,
-            'message' => $pasan
+            'message' => 'error dalam pengambilan data',
         ]);
     }
 }
