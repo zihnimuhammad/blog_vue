@@ -318,7 +318,8 @@ class FrontController extends Controller
 					'totalharga'=>$par->qty * $par->harga,
 					'catatan'=>str_replace("%20"," ",$_GET['catatan']),
 					'orderno'=>$_GET['orderno'],
-					'mejano'=>$_GET['mejano'] 
+					'mejano'=>$_GET['mejano'],
+					'status'=> 'Belum Diproses'
 				]); 
 			 
 			} 

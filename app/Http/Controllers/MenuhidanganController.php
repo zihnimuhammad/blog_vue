@@ -81,8 +81,6 @@ class MenuhidanganController extends Controller
 		
 		$filename =""; 
 		if($request->hasFile('file')){
-			 
-			
 			$file = $request->file('file');
 			$file->move(base_path('\public\images'), $file->getClientOriginalName());
 			

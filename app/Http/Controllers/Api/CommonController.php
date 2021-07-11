@@ -15,6 +15,7 @@ class CommonController extends Controller
         $pesanan = Pesanan::findorfail($id);
         
         if($pesanan){
+
             $pesanan->status = $requset->status;
             $updated = $pesanan->save();
 
