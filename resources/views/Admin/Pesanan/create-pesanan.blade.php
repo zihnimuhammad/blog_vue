@@ -46,6 +46,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <form class="was-validated" action="{{route('simpan-pesanan')}}" method="post">
             {{ csrf_field() }}
               <div class="form-group">
+                <input type="text" id="orderno" name="orderno" class="form-control" placeholder="Nomor Order" required>
+                <div class="invalid-feedback">
+                  Nomor Order Harus Diisi.
+                </div>
+              </div>
+              <div class="form-group">
                 <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" required>
                 <div class="invalid-feedback">
                   ID Menu Harus Diisi.

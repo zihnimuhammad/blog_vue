@@ -45,6 +45,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="card-body">
           <form class="was-validated" action="{{url('update-pesanan',$pes->id)}}" method="post">
             {{ csrf_field() }}
+            <div class="form-group">
+              <label for="orderno">Nomor Order</label>
+                <input type="text" id="orderno" name="orderno" class="form-control" placeholder="Nomor Order" value="{{$pes->orderno}}" required>
+                <div class="invalid-feedback">
+                  Nomor Order Harus Diisi.
+                </div>
+              </div>
               <div class="form-group">
                 <label for="idMenu">ID Menu</label>
                   <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" value="{{$pes->idMenu}}" required>

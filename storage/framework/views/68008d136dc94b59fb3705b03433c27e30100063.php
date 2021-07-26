@@ -43,32 +43,57 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="<?php echo e(url('update-pesanan',$pes->id)); ?>" method="post">
+          <form class="was-validated" action="<?php echo e(url('update-pesanan',$pes->id)); ?>" method="post">
             <?php echo e(csrf_field()); ?>
 
+            <div class="form-group">
+              <label for="orderno">Nomor Order</label>
+                <input type="text" id="orderno" name="orderno" class="form-control" placeholder="Nomor Order" value="<?php echo e($pes->orderno); ?>" required>
+                <div class="invalid-feedback">
+                  Nomor Order Harus Diisi.
+                </div>
+              </div>
               <div class="form-group">
                 <label for="idMenu">ID Menu</label>
-                  <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" value="<?php echo e($pes->idMenu); ?>">
+                  <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" value="<?php echo e($pes->idMenu); ?>" required>
+                  <div class="invalid-feedback">
+                    ID Menu Harus Diisi.
+                  </div>
               </div>
               <div class="form-group">
                 <label for="idPengguna">ID Pengguna</label>
-                <input type="text" id="idPengguna" name="idPengguna" class="form-control" placeholder="ID Pengguna" value="<?php echo e($pes->idPengguna); ?>">
+                <input type="text" id="idPengguna" name="idPengguna" class="form-control" placeholder="ID Pengguna" value="<?php echo e($pes->idPengguna); ?>" required>
+                <div class="invalid-feedback">
+                  ID Pengguna Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="mejano">Nomor Meja</label>
-                <input type="text" id="mejano" name="mejano" class="form-control" placeholder="Nomor Meja" value="<?php echo e($pes->mejano); ?>">
+                <input type="text" id="mejano" name="mejano" class="form-control" placeholder="Nomor Meja" value="<?php echo e($pes->mejano); ?>" required>
+                <div class="invalid-feedback">
+                  Nomor Meja Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="jumlahpesan">Jumlah Pesanan</label>
-                <input type="text" id="jumlahPesan" name="jumlahPesan" class="form-control" placeholder="Jumlah Pesanan" value="<?php echo e($pes->jumlahPesan); ?>">
+                <input type="text" id="jumlahPesan" name="jumlahPesan" class="form-control" placeholder="Jumlah Pesanan" value="<?php echo e($pes->jumlahPesan); ?>" required>
+                <div class="invalid-feedback">
+                  Jumlah Pesanan Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="harga">Harga</label>
-                <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga" value="<?php echo e($pes->harga); ?>">
+                <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga" value="<?php echo e($pes->harga); ?>" required>
+                <div class="invalid-feedback">
+                  Harga Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <label for="totalharga">Total Harga</label>
-                <input type="text" id="totalharga" name="totalharga" class="form-control" placeholder="Total Harga" value="<?php echo e($pes->totalharga); ?>">
+                <input type="text" id="totalharga" name="totalharga" class="form-control" placeholder="Total Harga" value="<?php echo e($pes->totalharga); ?>" required>
+                <div class="invalid-feedback">
+                  Total Harga Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Ubah Data</button>

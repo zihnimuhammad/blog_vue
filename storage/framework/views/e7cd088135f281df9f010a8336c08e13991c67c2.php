@@ -55,6 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <th>Suasana Hati</th>
               <th>Menu</th>
               <th>Nilai Bobot</th>
+              <th>Aksi</th>
             </tr>
             <?php $__currentLoopData = $datalatih; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <tr>

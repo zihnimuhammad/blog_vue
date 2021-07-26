@@ -43,26 +43,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="<?php echo e(route('simpan-pesanan')); ?>" method="post">
+          <form class="was-validated" action="<?php echo e(route('simpan-pesanan')); ?>" method="post">
             <?php echo e(csrf_field()); ?>
 
               <div class="form-group">
-                <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu">
+                <input type="text" id="orderno" name="orderno" class="form-control" placeholder="Nomor Order" required>
+                <div class="invalid-feedback">
+                  Nomor Order Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                  <input type="text" id="idPengguna" name="idPengguna" class="form-control" placeholder="ID Pengguna">
+                <input type="text" id="idMenu" name="idMenu" class="form-control" placeholder="ID Menu" required>
+                <div class="invalid-feedback">
+                  ID Menu Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                <input type="date" id="tanggalPesan" name="tanggalPesan" class="form-control" placeholder="Tanggal Pesanan">
+                  <input type="text" id="idPengguna" name="idPengguna" class="form-control" placeholder="ID Pengguna" required>
+                  <div class="invalid-feedback">
+                    ID Pengguna Harus Diisi.
+                  </div>
               </div>
               <div class="form-group">
-                <input type="text" id="jumlahPesan" name="jumlahPesan" class="form-control" placeholder="Jumlah Pesanan">
+                <input type="date" id="tanggalPesan" name="tanggalPesan" class="form-control" placeholder="Tanggal Pesanan" required>
+                <div class="invalid-feedback">
+                  Tanggal Pesanan Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga Pesanan">
+                <input type="text" id="mejano" name="mejano" class="form-control" placeholder="Nomor Meja" required>
+                <div class="invalid-feedback">
+                  Nomor Meja Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                <input type="text" id="totalharga" name="totalharga" class="form-control" placeholder="Total Harga">
+                <input type="text" id="jumlahPesan" name="jumlahPesan" class="form-control" placeholder="Jumlah Pesanan" required>
+                <div class="invalid-feedback">
+                  Jumlah Pesanan Harus Diisi.
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" id="harga" name="harga" class="form-control" placeholder="Harga Pesanan" required>
+                <div class="invalid-feedback">
+                  Harga Pesanan Harus Diisi.
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" id="totalharga" name="totalharga" class="form-control" placeholder="Total Harga" required>
+                <div class="invalid-feedback">
+                  Total Harga Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Simpan Data</button>

@@ -43,11 +43,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card card-info card-outline">
         
         <div class="card-body">
-          <form action="<?php echo e(route('simpan-karyawan')); ?>" method="post">
+          <form class="was-validated" action="<?php echo e(route('simpan-karyawan')); ?>" method="post">
             <?php echo e(csrf_field()); ?>
 
               <div class="form-group">
-                  <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Karyawan">
+                  <input type="text" id="nama" name="nama" class="form-control" placeholder="Nama Karyawan" required>
+                  <div class="invalid-feedback">
+                    Nama Karyawan Harus Diisi.
+                  </div>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlSelect1">Jabatan</label>
@@ -66,19 +69,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
               <div class="form-group">
                 <label for="tanggal_lahir">Tanggal Lahir</label>
-                <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir">
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir" class="form-control" placeholder="Tanggal Lahir" required>
+                <div class="invalid-feedback">
+                  Tanggal Lahir Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                <input type="text" id="no_hp" name="no_hp" class="form-control" placeholder="No HP">
+                <input id="numbersOnly" pattern="[0-9.]+" type="text" id="no_hp" name="no_hp" class="form-control" placeholder="No HP" required>
+                <div class="invalid-feedback">
+                  Nomor HP Harus Diisi Dengan Format Angka.
+                </div>
               </div>
               <div class="form-group">
-                <input type="text" id="email" name="email" class="form-control" placeholder="Email">
+                <input type="text" id="email" name="email" class="form-control" placeholder="Email" required>
+                <div class="invalid-feedback">
+                  Email Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
-                <input type="text" id="password" name="password" class="form-control" placeholder="Password">
+                <input type="text" id="password" name="password" class="form-control" placeholder="Password" required>
+                <div class="invalid-feedback">
+                  Password Harus Diisi
+                </div>
               </div>
               <div class="form-group">
-                <textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat"></textarea>
+                <textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat" required></textarea>
+                <div class="invalid-feedback">
+                  Alamat Harus Diisi.
+                </div>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">Simpan Data</button>

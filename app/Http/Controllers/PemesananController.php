@@ -39,8 +39,8 @@ class PemesananController extends Controller
             'tanggalPesan' => $request->tanggalPesan,
             'jumlahPesan' => $request->jumlahPesan,
             'harga' => $request->harga,
-            'totalharga' => $totalharga,
-            'orderno' => $order_no,
+            'totalharga' => $request->totalharga,
+            'orderno' => $request->orderno,
             'mejano' => $request->mejano,
 
         ]);
